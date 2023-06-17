@@ -17,23 +17,32 @@ const LoginPage = () => {
             <div>
               <img src={inst_image} alt="" width="454px" />
             </div>
-            <div className="loginpage__rightcomponent">
-              <img className="loginpage__logo" src={insta_logo} alt="" />
+            <div>
+              <div className="loginpage__rightcomponent">
+                <img className="loginpage__logo" src={insta_logo} alt="" />
+                <div className="loginpage__signin">
+                <input className="loginpage__text" type="text" placeholder="Phone Number,username, or email"/>
+                <input className="loginpage__text" type="password" placeholder="Password"/>
+                <button className="login__button" >Log In</button>
+
+                <div className="login__ordiv">
+                    <div className="login__dividor"></div>
+                    <div className="login__or">OR</div>
+                    <div className="login__dividor"></div>
+                </div>
+                <div className="login__fb">
+                    <img src={fb} width="15px" style={{ "marginRight":"5px" }} alt="" />Log in with Facebook
+                </div>
+                <div className="login_forget"> Forgot password?</div>
+              </div>
+            </div>
+            <div className="loginpage__signupoption">
               <div className="loginpage__signin">
-              <input className="loginpage__text" type="text" placeholder="Phone Number,username, or email"/>
-              <input className="loginpage__text" type="password" placeholder="Password"/>
-              <button className="login__button" >Log In</button>
-
-              <div className="login__ordiv">
-                  <div className="login__dividor"></div>
-                  <div className="login__or">OR</div>
-                  <div className="login__dividor"></div>
+                Don't have an account? Sign up
               </div>
-              <div className="login__fb">
-                  <img src={fb} width="15px" style={{ "marginRight":"5px" }} alt="" />Log in with Facebook
+              <div className="loginpage__signup">
+                Have an account? Sign in
               </div>
-              <div className="login_forget"> Forgot password?</div>
-
             </div>
             </div>
           </div>
