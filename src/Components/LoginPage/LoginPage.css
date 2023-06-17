@@ -86,3 +86,22 @@ body{
     text-align: center;
 }
 
+.loginPage__signin{
+    margin-top: 20px;
+}
+.loginPage__signup {
+    margin-top: 20px;
+}
+.loginPage__downloadSection {
+    height: 105px;
+    width: 350px;
+    text-align: center;
+    margin-top: 20px;
+}
+.loginPage__option {
+    margin-top: 20px;
+}
+.loginPage_dwimg {
+    margin: 5px;
+}
+
