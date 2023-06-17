@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './LoginPage.css'
 import './LoginPage.css';
 import Grid from '@mui/material/Grid';
 import inst_image from '../../images/9364675fb26a.svg';
@@ -13,12 +14,12 @@ const LoginPage = () => {
           jhjns
         </Grid>
         <Grid item xs={6}>
-          <div>
+          <div className="loginpage__main">
             <div>
               <img src={inst_image} alt="" width="454px" />
             </div>
-            <div>
-              <img src={insta_logo} alt="" />
+            <div className="loginpage__rightcomponent">
+              <img className="loginpage__logo" src={insta_logo} alt="" />
             </div>
           </div>
         </Grid>

@@ -1,0 +1,15 @@
+.loginpage__main{
+    display: flex;   
+}
+
+.loginpage__logo{
+    width: 175px;
+    margin-top: 25px;   
+}
+
+.loginpage__rightcomponent{    
+    width: 350px;
+    padding-bottom: 25px;
+    border: 1px solid #DBDBDB;
+
+}
