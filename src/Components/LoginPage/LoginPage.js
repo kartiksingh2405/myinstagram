@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './LoginPage.css'
-// import Grid from '@material-ui/core/Grid';
+import './LoginPage.css';
+import Grid from '@mui/material/Grid';
 
 const LoginPage = () => {
   return (
     <div>
-      {/* <Grid container>
+      <Grid container>
         <Grid item xs={3}>
-          jhjns
+          jhjnss
         </Grid>
         <Grid item xs={6}>
           jhbj
@@ -15,7 +15,7 @@ const LoginPage = () => {
         <Grid item xs={3}>
           jkjl
         </Grid>
-      </Grid> */}
+      </Grid>
     </div>
   );
 };
