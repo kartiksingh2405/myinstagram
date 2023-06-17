@@ -5,6 +5,8 @@ import Grid from '@mui/material/Grid';
 import inst_image from '../../images/9364675fb26a.svg';
 import insta_logo from '../../images/logoinsta.png';
 import fb from '../../images/fb.png';
+import appstore from '../../images/app.png';
+import playstore from '../../images/play.png';
 
 const LoginPage = () => {
   return (
@@ -43,6 +45,15 @@ const LoginPage = () => {
             <div className="loginPage__signup">
                 Have an account? <span style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign in</span>
             </div>
+            </div>
+            <div className="loginPage__downloadSection">
+              <div>
+                Get the app.
+              </div>
+              <div className="loginPage__option">
+                <img className="loginPage_dwimg" src={appstore} width="136px" alt=""/>
+                <img className="loginPage_dwimg" src={playstore} width="136px" alt="" />
+              </div>
             </div>
             </div>
           </div>
