@@ -11,7 +11,6 @@ const LoginPage = () => {
     <div>
       <Grid container>
         <Grid item xs={3}>
-          jhjns
         </Grid>
         <Grid item xs={6}>
           <div className="loginpage__main">
@@ -20,11 +19,21 @@ const LoginPage = () => {
             </div>
             <div className="loginpage__rightcomponent">
               <img className="loginpage__logo" src={insta_logo} alt="" />
+              <div className="loginpage__signin">
+              <input className="loginpage__text" type="text" placeholder="Phone Number,username, or email"/>
+              <input className="loginpage__text" type="password" placeholder="Password"/>
+              <button className="login__button" >Log In</button>
+
+              <div className="login__ordiv">
+                  <div className="login__dividor"></div>
+                  <div className="login__or">OR</div>
+                  <div className="login__dividor"></div>
+              </div>
+            </div>
             </div>
           </div>
         </Grid>
         <Grid item xs={3}>
-          jkjl
         </Grid>
       </Grid>
     </div>
