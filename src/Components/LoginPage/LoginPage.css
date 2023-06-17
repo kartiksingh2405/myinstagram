@@ -1,15 +1,18 @@
 .loginpage__main{
-    display: flex;   
+    display: flex;
+    margin-top: 25px;   
 }
 
 .loginpage__logo{
-    width: 175px;
-    margin-top: 25px;   
+    width: 175px; 
+    margin-top: 25px; 
 }
 
 .loginpage__rightcomponent{    
     width: 350px;
     padding-bottom: 25px;
     border: 1px solid #DBDBDB;
+    margin-top: 25px;
+    text-align: center;
 
 }
