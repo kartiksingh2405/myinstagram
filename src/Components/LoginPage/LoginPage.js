@@ -4,7 +4,7 @@ import './LoginPage.css';
 import Grid from '@mui/material/Grid';
 import inst_image from '../../images/9364675fb26a.svg';
 import insta_logo from '../../images/logoinsta.png';
-
+import fb from '../../images/fb.png';
 
 const LoginPage = () => {
   return (
@@ -29,6 +29,11 @@ const LoginPage = () => {
                   <div className="login__or">OR</div>
                   <div className="login__dividor"></div>
               </div>
+              <div className="login__fb">
+                  <img src={fb} width="15px" style={{ "marginRight":"5px" }} alt="" />Log in with Facebook
+              </div>
+              <div className="login_forget"> Forgot password?</div>
+
             </div>
             </div>
           </div>

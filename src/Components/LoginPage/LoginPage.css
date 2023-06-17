@@ -64,4 +64,16 @@ body{
     font-size: 15px;
 }
 
+.login__fb {
+    color: #395185;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.login_forget {
+    color: rgba(var(--fe0,0,55,107),1);
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    text-align: center;
+}
 
