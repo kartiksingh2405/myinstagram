@@ -9,7 +9,9 @@ class SignIN extends Component {
     render() {
         return (
             <div>
-
+                <input className="loginpage__text" type="text" placeholder="Phone Number,username, or email"/>
+                <input className="loginpage__text" type="password" placeholder="Password"/>
+                <button className="login__button" >Log In</button>
             </div>
         );
     }
