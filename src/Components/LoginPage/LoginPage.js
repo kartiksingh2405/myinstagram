@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './LoginPage.css'
-import './LoginPage.css';
 import Grid from '@mui/material/Grid';
 import inst_image from '../../images/9364675fb26a.svg';
 import insta_logo from '../../images/logoinsta.png';
