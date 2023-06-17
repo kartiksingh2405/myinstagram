@@ -37,12 +37,12 @@ const LoginPage = () => {
               </div>
             </div>
             <div className="loginpage__signupoption">
-              <div className="loginpage__signin">
-                Don't have an account? Sign up
-              </div>
-              <div className="loginpage__signup">
-                Have an account? Sign in
-              </div>
+            <div className="loginPage__signin">
+               Don't have an account? <span style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign up</span>
+            </div>
+            <div className="loginPage__signup">
+                Have an account? <span style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign in</span>
+            </div>
             </div>
             </div>
           </div>

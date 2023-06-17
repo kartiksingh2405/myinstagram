@@ -77,3 +77,12 @@ body{
     text-align: center;
 }
 
+.loginpage__signupoption {
+    margin-top: 25px;
+    height:56px;
+    width: 350px;
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    text-align: center;
+}
+
