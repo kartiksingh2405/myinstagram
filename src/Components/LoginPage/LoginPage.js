@@ -7,10 +7,25 @@ import fb from '../../images/fb.png';
 import appstore from '../../images/app.png';
 import playstore from '../../images/play.png';
 import SignIN from '../SignIn/SignIN';
+import SignUp from '../SignUp/SignUp';
 
-const LoginPage = () => {
-  return (
-    <div>
+class LoginPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      isLogin:true 
+    };
+  }
+  changeLogin=()=>{
+    if(this.state.isLogin)
+        this.setState({isLogin: false});
+    else    
+        this.setState({isLogin: true});
+  }
+
+  render() {
+    return (
+      <div>
       <Grid container>
         <Grid item xs={3}>
         </Grid>
@@ -23,7 +38,9 @@ const LoginPage = () => {
               <div className="loginpage__rightcomponent">
                 <img className="loginpage__logo" src={insta_logo} alt="" />
                 <div className="loginpage__signin">
-                  <SignIN/>
+                {
+                  this.state.isLogin ? <SignIN/> : <SignUp/>
+                }
 
                 <div className="login__ordiv">
                     <div className="login__dividor"></div>
@@ -37,13 +54,16 @@ const LoginPage = () => {
               </div>
             </div>
             <div className="loginpage__signupoption">
-            <div className="loginPage__signin">
-               Don't have an account? <span style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign up</span>
-            </div>
-            <div className="loginPage__signup">
-                Have an account? <span style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign in</span>
-            </div>
-            </div>
+            {
+              this.state.isLogin ?
+              <div className="loginPage__signin">
+              Don't have an account? <span onClick={this.changeLogin} style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign up</span>
+              </div> :
+              <div className="loginPage__signup">
+                Have an account? <span onClick={this.changeLogin}  style={{ "fontWeight":"bold", "color":"#0395F6"}}>Sign in</span>
+              </div>
+            }
+              </div>
             <div className="loginPage__downloadSection">
               <div>
                 Get the app.
@@ -61,6 +81,6 @@ const LoginPage = () => {
       </Grid>
     </div>
   );
-};
-
+}
+}
 export default LoginPage;
