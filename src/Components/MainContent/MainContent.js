@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import "./MainContent.css";
+import Grid from '@mui/material/Grid';
+
 
 class MainContent extends Component {
     constructor(props) {
@@ -8,7 +11,14 @@ class MainContent extends Component {
     render() {
         return (
             <div>
-                Main Content
+                <Grid container>
+                    <Grid item xs={2}></Grid>
+                    <Grid item xs={6}>
+                        
+                    </Grid>
+                    <Grid item xs={2}></Grid>
+                    <Grid item xs={2}></Grid>
+                </Grid>
             </div>
         );
     }
