@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import "./Home.css"
+import NavBar from '../NavBar/NavBar';
+import MainContent from '../MainContent/MainContent';
 
 class HomePage extends Component {
     constructor(props) {
@@ -8,7 +11,8 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                hello
+                <NavBar/>
+                <MainContent/>
             </div>
         );
     }
