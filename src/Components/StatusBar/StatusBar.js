@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import "./StatusBar.css";
 import Avatar from '@mui/material/Avatar';
 import statusimg from "../../images/pp1.png";
+
+ 
 class StatusBar extends Component {
     constructor(props) {
         super(props);

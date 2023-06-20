@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Post from '../Pos/Post';
+import "./Post.css";
 
-class MainPage extends Component {
+class Post extends Component {
     constructor(props) {
         super(props);
         this.state = {  };
@@ -9,10 +9,10 @@ class MainPage extends Component {
     render() {
         return (
             <div>
-                <Post />
+                hello
             </div>
         );
     }
 }
 
-export default MainPage;
+export default Post;
