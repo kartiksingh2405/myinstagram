@@ -17,11 +17,11 @@ class Post extends Component {
                 {/* Header */}
                 <div className="post__header">
                     <Avatar className="post__image" src="" />
-                    <div className="post__username">Username</div>
+                    <div className="post__username">{this.props.userName}</div>
                 </div>
                 {/* Image */}
                 <div>
-                    <img src={postimage} width="615px" alt="" /> 
+                    <img src={this.props.postImage} width="615px" alt="" /> 
                 </div>
                 {/* Analytics */}
                 <div>
@@ -31,11 +31,17 @@ class Post extends Component {
                   <img src={share} className="post_reactimage" alt=""/>
                 </div>
                 <div style={{ "fontWeight":"bold","marginLeft":"20px  "}}>
-                  7798 likes     
+                  {this.props.likes} likes     
                 </div>
                 </div>
                 {/* Comment Section */}
-                <div></div>
+                <div>
+                    <div className="post_comment">Hello</div>
+                    <div className="post_comment">Hello</div>
+                    <div className="post_comment">Hello</div>
+                    <div className="post_comment">Hello</div>
+                    <input text="text" className="post__commentbox" placeholder="Add a comment..."/>
+                </div>
 
             </div>
         );
