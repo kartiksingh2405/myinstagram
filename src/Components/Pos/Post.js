@@ -17,9 +17,13 @@ class Post extends Component {
                     <div className="post__username">Username</div>
                 </div>
                 {/* Image */}
-                <div></div>
+                <div>
+                    <img src={postimage} width="615px" alt="" /> 
+                </div>
                 {/* Analytics */}
-                <div></div>
+                <div>
+                    
+                </div>
                 {/* Comment Section */}
                 <div></div>
 
