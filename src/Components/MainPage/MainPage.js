@@ -10,6 +10,11 @@ class MainPage extends Component {
         return (
             <div>
                 <Post />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+
             </div>
         );
     }

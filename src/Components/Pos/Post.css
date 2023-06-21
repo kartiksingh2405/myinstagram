@@ -1,0 +1,22 @@
+.post__container {
+    width: 615px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    margin-bottom: 25px;
+}
+.post__header{
+    height: 60px;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+}
+
+.post__image{
+    min-width: 30px;
+    min-height: 30px;
+    margin: 10px;
+}
+
+.post__username{
+    font-weight: bold;
+    margin-top: 20px;
+}
