@@ -9,8 +9,33 @@ import share from "../../images/share.svg";
 class Post extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { 
+            commentList:[]
+        }
     }
+
+    componentDidMount(){
+        this.getComments();
+    }
+
+    getComments=()=>{ //API backend
+        let data=[
+           {
+               "username": "ASD",
+               "commentId":"1234",
+               "timeStamp":"123456",
+               "description":"Comment 1"
+           },
+           {
+            "username": "kkk",
+            "commentId":"1234",
+            "timeStamp":"123456",
+            "description":"Comment 2"
+        }
+       ];
+       this.setState({commentList:  data});
+   }   
+
     render() {
         return (
             <div className="post__container">
@@ -36,10 +61,11 @@ class Post extends Component {
                 </div>
                 {/* Comment Section */}
                 <div>
-                    <div className="post_comment">Hello</div>
-                    <div className="post_comment">Hello</div>
-                    <div className="post_comment">Hello</div>
-                    <div className="post_comment">Hello</div>
+                    {
+                        this.state.commentList.map((item,index)=>(
+                            <div className="post_comment">{item.username}: {item.description}</div>
+                        ))
+                    }
                     <input text="text" className="post__commentbox" placeholder="Add a comment..."/>
                 </div>
 
