@@ -4,23 +4,50 @@ import Post from '../Pos/Post';
 class MainPage extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
+            postArray:[] 
         };
-    } 
+    }
+    
+    componentDidMount(){
+        this.getPost();
+    }
+
+    getPost=()=>{ //API backend
+        let data=[
+           {
+                "postId":"123456",
+                "userName": "kkkk",
+                "postImageURL":"https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg",
+                "timeStamp":"123456",
+                "likes":"1234"
+           },
+           {
+                "postId":"123456",
+                "userName": "kkkk",
+                "postImageURL":"https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg",
+                "timeStamp":"123456",
+                "likes":"1234"
+            },
+            {
+                "postId":"123456",
+                "userName": "kkkk",
+                "postImageURL":"https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg",
+                "timeStamp":"123456",
+                "likes":"1234"
+            }
+       ];
+       this.setState({postArray:  data});
+   }   
 
     render() {
         return (
             <div>
-                <Post id="1234" username="kartik" postImage="https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg" likes="1234 "/>
-                <Post id="1234" username="kartik" postImage="https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg" likes="1234 "/>
-                <Post id="1234" username="kartik" postImage="https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg" likes="1234 "/>
-                <Post id="1234" username="kartik" postImage="https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg" likes="1234 "/>
-
-                {/*<Post />
-                <Post />
-                <Post />
-        <Post />*/}
-
+                {
+                     this.state.postArray.map((item,index)=>(
+                        <Post id={item.postId} userName={item.userName} postImage={item.postImageURL} likes={item.likes} />
+                    ))
+                }
             </div>
         );
     }
