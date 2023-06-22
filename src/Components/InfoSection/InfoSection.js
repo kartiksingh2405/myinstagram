@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import "./InfoSection.css";
+import Avatar from '@mui/material/Avatar';
+import imageSrc from "../../images/pp1.png"
 
 
 class InfoSection extends Component {
@@ -10,7 +12,13 @@ class InfoSection extends Component {
     render() {
         return (
             <div>
-                InfoSection
+                <div className="info__container">
+                    <Avatar src={imageSrc} className="info__image"/>
+                    <div className="info_content">
+                        <div className="info_username"> Kartik</div>
+                        <div className="info_description"> Description</div>
+                    </div>
+                </div>
             </div>
         );
     }
