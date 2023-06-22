@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import "./Suggestions.css"
 import Avatar from '@mui/material/Avatar';
-import imageSrc from "../../images/pp1.png"
+import imageSrc1 from "../../images/pp1.png"
+import imageSrc2 from '../../images/pp2.png'
+import imageSrc3 from '../../images/pp3.jpeg'
 
 class Suggestions extends Component {
     constructor(props) {
@@ -11,13 +13,15 @@ class Suggestions extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <div>
+                <div className="suggestions__container">
+                    <div className="suggestions__header">
                         <div>Suggestions for you</div>
                     </div>
-                    <div>
-                        <Avatar src={imageSrc} className="info__image"/>
-                        <div>Friend 1</div>
+                    <div className="suggestions__body">
+                    <div className="suggestions__friends">
+                        <Avatar src={imageSrc1} className="suggestions__image"/>
+                        <div className="suggestions__username">Friend 1</div>
+                    </div>
                     </div>
 
                 </div>
