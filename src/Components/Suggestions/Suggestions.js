@@ -20,10 +20,29 @@ class Suggestions extends Component {
                     <div className="suggestions__body">
                     <div className="suggestions__friends">
                         <Avatar src={imageSrc1} className="suggestions__image"/>
+                        <div className="suggestions__username">testing_profile</div>
+                    </div>
+                    <div className="suggestions__friends">
+                        <Avatar src={imageSrc2} className="suggestions__image"/>
+                        <div className="suggestions__username">dummy_user</div>
+                    </div>
+                    <div className="suggestions__friends">
+                        <Avatar src={imageSrc3} className="suggestions__image"/>
                         <div className="suggestions__username">Friend 1</div>
                     </div>
+                    <div className="suggestions__friends">
+                        <Avatar src={imageSrc2} className="suggestions__image"/>
+                        <div className="suggestions__username">Friend 1</div>
                     </div>
-
+                    <div className="suggestions__friends">
+                        <Avatar src={imageSrc3} className="suggestions__image"/>
+                        <div className="suggestions__username">Friend 1</div>
+                    </div>
+                    <div className="suggestions__friends">
+                        <Avatar src={imageSrc1} className="suggestions__image"/>
+                        <div className="suggestions__username">Friend 1</div>
+                    </div>
+                </div>
                 </div>
             </div>
         );
