@@ -32,7 +32,7 @@ class Suggestions extends Component {
                     </div>
                     <div className="suggestions__friends">
                         <Avatar src={imageSrc2} className="suggestions__image"/>
-                        <div className="suggestions__username">Friend 1</div>
+                        <div className="suggestions__username">Friend 2</div>
                     </div>
                     <div className="suggestions__friends">
                         <Avatar src={imageSrc3} className="suggestions__image"/>
