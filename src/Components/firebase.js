@@ -1,12 +1,12 @@
 import firebase from "firebase";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyBiImFCXW14MtnHNmLedceYeEyA3LIZr7A",
-  authDomain: "instaclone-b1b16.firebaseapp.com",
-  projectId: "instaclone-b1b16",
-  storageBucket: "instaclone-b1b16.appspot.com",
-  messagingSenderId: "633280563245",
-  appId: "1:633280563245:web:221f31c7947575042510a4"
+  apiKey: "AIzaSyDvjWSEbaib8ZhI0yf0APNnMDAfxD3Hu08",
+  authDomain: "my-instagram-3710a.firebaseapp.com",
+  projectId: "my-instagram-3710a",
+  storageBucket: "my-instagram-3710a.appspot.com",
+  messagingSenderId: "688398971595",
+  appId: "1:688398971595:web:065c17b9415c7d1baea14e"
 });
 
 const auth=firebase.auth();
