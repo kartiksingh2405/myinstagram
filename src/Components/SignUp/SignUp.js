@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './SignUp.css'
 import {storage,auth} from "../firebase";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 class SignUp extends Component {
     constructor(props) {
@@ -14,17 +15,18 @@ class SignUp extends Component {
     }
 
     newSignUp=()=>{
-        auth.createUserWithEmailAndPassword(this.state.emailId, this.state.password)
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, this.state.emailId, this.state.password)
         .then((userCredential) => {
             // Signed in 
-            var user = userCredential.user;
+            const user = userCredential.user;
             // ...
         })
         .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-
-        });
+            const errorCode = error.code;
+            const errorMessage = error.message;
+    // ..
+  });
     }
     
     render() {
