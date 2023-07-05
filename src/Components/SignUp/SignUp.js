@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './SignUp.css'
-import {storage,auth} from "./firebase";
+import {storage,auth} from "../firebase";
 
 class SignUp extends Component {
     constructor(props) {
