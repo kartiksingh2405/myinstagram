@@ -22,10 +22,10 @@ class SignUp extends Component {
             const user = userCredential.user;
 
             let payload = {
-                "userId": "1234567",
-                "userName": "kartik",
-                "name": "kartik",
-                "profileImage": "www.google.com"
+                "userId": user.uid,
+                "userName": this.state.userName,
+                "name": this.state.name,
+                "profileImage": ""
             }
 
             const requestOptions ={
@@ -40,8 +40,9 @@ class SignUp extends Component {
                 
             })
             .catch(error => {
-
-            })
+                console.error("Error fetching data:", error);
+                // Handle the error
+              });
 
             // ...
         })
