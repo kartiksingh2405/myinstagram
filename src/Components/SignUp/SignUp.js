@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './SignUp.css'
+import React, { Component } from 'react';
+import "./SignUp.css";
 import {storage,auth} from "../firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -8,19 +8,18 @@ class SignUp extends Component {
         super(props);
         this.state = { 
             emailId : null,
-            name : null,
-            userName : null,
-            password : null 
+            name: null,
+            userName: null,
+            password: null
          }
     }
-
     newSignUp=()=>{
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, this.state.emailId, this.state.password)
+        createUserWithEmailAndPassword(auth,this.state.emailId, this.state.password)
         .then((userCredential) => {
             // Signed in 
-            const user = userCredential.user;
-
+            var user = userCredential.user;
+            
             let payload = {
                 "userId": user.uid,
                 "userName": this.state.userName,
@@ -30,40 +29,41 @@ class SignUp extends Component {
 
             const requestOptions ={
                 method: "POST",
-                headers: {'ContentType':"application/json"},
+                headers: { 'Content-Type': 'application/json' },
                 body : JSON.stringify(payload),
             }
 
-            fetch("localhost:8080/users",requestOptions)
+            fetch("http://localhost:8080/users",requestOptions)
             .then(response => response.json())
             .then(data => {
-                
+                localStorage.setItem("users",JSON.stringify(user));
+                window.location.reload();
             })
-            .catch(error => {
-                console.error("Error fetching data:", error);
-                // Handle the error
-              });
+            .catch(error =>{
+
+            })
 
             // ...
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-    // ..
-  });
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
+        });
     }
-    
-    render() {
-        return (
+
+    render() { 
+        return ( 
             <div>
                 <input className="loginpage__text" onChange={(event)=>{this.state.emailId=event.currentTarget.value;}} type="text" placeholder="Mobile Number or Email"   / >
                 <input className="loginpage__text" onChange={(event)=>{this.state.name=event.currentTarget.value;}} type="text" placeholder="Full Name"/>
                 <input className="loginpage__text" onChange={(event)=>{this.state.userName=event.currentTarget.value;}} type="text" placeholder="Username"/>
                 <input className="loginpage__text" onChange={(event)=>{this.state.password=event.currentTarget.value;}} type="password" placeholder="Password"/>
-                <button className="login__button" onClick={this.newSignUp} >Sign Up</button>
+
+                <button className="login__button" onClick={this.newSignUp} >Sign up</button>
             </div>
-        );
+         );
     }
 }
-
+ 
 export default SignUp;
