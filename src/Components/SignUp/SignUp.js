@@ -36,7 +36,7 @@ class SignUp extends Component {
             fetch("http://localhost:8080/users",requestOptions)
             .then(response => response.json())
             .then(data => {
-                localStorage.setItem("users",JSON.stringify(user));
+                localStorage.setItem("users", user);
                 window.location.reload();
             })
             .catch(error =>{
