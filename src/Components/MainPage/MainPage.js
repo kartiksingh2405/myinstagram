@@ -45,8 +45,15 @@ class MainPage extends Component {
     render() {
         return (
             <div>
-                <div style={{"textAlign":"center","margin":"10px"}}>
-                    <img className="mainpage__uploadicon" src={uploadImage} alt=""/>
+                <div className="mainpage__container ">
+                    <div className="mainpage__divider"></div>
+                    <div className="fileupload">
+                        <label for="file-upload">
+                        <img className="mainpage__uploadicon" src={uploadImage} alt=""/>
+                        </label>
+                        <input id="file-upload" type="file" />
+                    </div>
+                    <div className="mainpage__divider"></div>  
                 </div>
                 {
                      this.state.postArray.map((item,index)=>(
