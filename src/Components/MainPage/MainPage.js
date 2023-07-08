@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./MainPage.css";
 import Post from '../Pos/Post';
 import uploadImage from "../../images/upload.png";
+import {storage,auth} from "../firebase";
 
 class MainPage extends Component {
     constructor(props) {
@@ -20,27 +21,49 @@ class MainPage extends Component {
            {
                 "postId":"123456",
                 "userName": "kkkk",
-                "postImageURL":"https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg",
+                "postImageURL":"https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
                 "timeStamp":"123456",
                 "likes":"1234"
            },
            {
                 "postId":"123456",
                 "userName": "kkkk",
-                "postImageURL":"https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg",
+                "postImageURL":"https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
                 "timeStamp":"123456",
                 "likes":"1234"
             },
             {
                 "postId":"123456",
                 "userName": "kkkk",
-                "postImageURL":"https://cdn-0.practicaltyping.com/wp-content/uploads/2022/04/leviacker.jpg",
+                "postImageURL":"https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
                 "timeStamp":"123456",
                 "likes":"1234"
             }
        ];
        this.setState({postArray:  data});
-   }   
+    }   
+
+    upload=(event)=>{
+        let image=event.target.files[0];
+        if(image == null || image == undefined)
+            return;
+
+        var uploadTask = storage.ref("images").child(image.name).put(image);
+        uploadTask.on(
+        "state_changed",
+        function (snapshot) {
+
+        },
+        function (error) {
+        },
+        function () {
+            uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+            })
+            }
+        );
+    }
+        
+            
 
     render() {
         return (
