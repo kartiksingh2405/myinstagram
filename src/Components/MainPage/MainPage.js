@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./MainPage.css";
 import Post from '../Pos/Post';
 import uploadImage from "../../images/upload.png";
-import {storage,auth} from "../firebase";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL, uploadTask} from 'firebase/storage';
 
 class MainPage extends Component {
     constructor(props) {
@@ -43,26 +43,31 @@ class MainPage extends Component {
        this.setState({postArray:  data});
     }   
 
-    upload=(event)=>{
-        let image=event.target.files[0];
-        if(image == null || image == undefined)
-            return;
 
-        var uploadTask = storage.ref("images").child(image.name).put(image);
-        uploadTask.on(
-        "state_changed",
-        function (snapshot) {
 
-        },
-        function (error) {
-        },
-        function () {
-            uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-            })
-            }
-        );
+upload = (event) => {
+  let image = event.target.files[0];
+  if (image == null || image == undefined)
+    return;
+    const storage = getStorage();
+  var storageRef = ref(storage, "images/" + image.name);
+  var uploadTask = uploadBytesResumable(storageRef, image);
+
+  uploadTask.on(
+    "state_changed",
+    function (snapshot) {
+      // Progress updates can be handled here
+    },
+    function (error) {
+      // Error handling can be done here
+    },
+    function () {
+      getDownloadURL(uploadTask.snapshot.ref).then(function (downloadURL) {
+        // Handle the download URL here
+      });
     }
-        
+  );
+};   
             
 
     render() {
@@ -72,9 +77,9 @@ class MainPage extends Component {
                     <div className="mainpage__divider"></div>
                     <div className="fileupload">
                         <label for="file-upload">
-                        <img className="mainpage__uploadicon" src={uploadImage} alt=""/>
+                            <img className="mainpage__uploadicon" src={uploadImage} alt=""/>
                         </label>
-                        <input id="file-upload" type="file" />
+                        <input onChange={this.upload} id="file-upload" type="file"/>
                     </div>
                     <div className="mainpage__divider"></div>  
                 </div>
