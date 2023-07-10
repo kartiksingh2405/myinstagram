@@ -18,30 +18,37 @@ class MainPage extends Component {
   }
 
   getPost = () => {
-    let data = [
-      {
-        "postId": "123456",
-        "userName": "kkkk",
-        "postImageURL": "https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
-        "timeStamp": "123456",
-        "likes": "1234"
-      },
-      {
-        "postId": "123456",
-        "userName": "kkkk",
-        "postImageURL": "https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
-        "timeStamp": "123456",
-        "likes": "1234"
-      },
-      {
-        "postId": "123456",
-        "userName": "kkkk",
-        "postImageURL": "https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
-        "timeStamp": "123456",
-        "likes": "1234"
-      }
-    ];
-    this.setState({ postArray: data });
+    const thisContext=this;
+
+    //    let data=[
+    //       {
+    //            "postId":"123456",
+    //            "userName": "kkkk",
+    //            "postImageURL":"https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
+    //            "timeStamp":"123456",
+    //            "likes":"1234"
+    //       },
+    //       {
+    //            "postId":"123456",
+    //            "userName": "kkkk",
+    //            "postImageURL":"https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
+    //            "timeStamp":"123456",
+    //            "likes":"1234"
+    //        },
+    //        {
+    //            "postId":"123456",
+    //            "userName": "kkkk",
+    //            "postImageURL":"https://irixlens.com/new/wp-content/uploads/2018/11/IRX_5473.jpg",
+    //            "timeStamp":"123456",
+    //            "likes":"1234"
+    //        }
+    //   ];
+
+    fetch('http://localhost:8080/post')
+            .then(response => response.json())
+            .then(data => {
+                thisContext.setState({postArray: data});
+        });
   }
 
 
@@ -88,6 +95,7 @@ class MainPage extends Component {
             .then(response => response.json())
             .then(data => {
               console.log(data);
+              thisContext.getPost();
             })
             .catch(error => {
 
@@ -114,7 +122,7 @@ class MainPage extends Component {
         </div>
         {
           this.state.postArray.map((item, index) => (
-            <Post key={item.postId} id={item.postId} userName={item.userName} postImage={item.postImageURL} likes={item.likes} />
+            <Post key={item.postId} id={item.postId} userName={item.userName} postImage={item.postPath} likes={item.likeCount} />
           ))
         }
       </div>
