@@ -91,15 +91,15 @@ class Post extends Component {
 
           {/* Image */}
           <div>
-              <img src={this.props.postImage} width="615px" /> 
+              <img src={this.props.postImage} width="615px" alt=""/> 
           </div>
 
           {/* Analytics */}
           <div>
               <div style={{"marginLeft":"10px"}}>
-                  <img src={love} className="post_reactimage"/>
-                  <img src={comment} className="post_reactimage"/>
-                  <img src={share} className="post_reactimage"/>
+                  <img src={love} className="post_reactimage" alt="" />
+                  <img src={comment} className="post_reactimage" alt="" />
+                  <img src={share} className="post_reactimage" alt=""/>
               </div>
               <div style={{ "fontWeight":"bold","marginLeft":"20px  "}}>
                   {this.props.likes} likes     
